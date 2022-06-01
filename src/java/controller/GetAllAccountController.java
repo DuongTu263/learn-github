@@ -60,12 +60,13 @@ public class GetAllAccountController extends HttpServlet {
             } catch (Exception e) {
                 pageIndex = 1;
             }
-            //demo git hup
+            //demo git hup 
             
         } else {
             pageIndex = 1;
         }
-        int pageSize = 10s;
+        
+        int pageSize = 5;
         UserDAO userDAO = new UserDAOImpl();
         Pagination<Account> users = userDAO.getAllAccount(pageIndex, pageSize, search);
         request.setAttribute("users", users);
